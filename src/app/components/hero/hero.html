@@ -1,0 +1,238 @@
+<section
+  id="home"
+  class="relative flex min-h-screen items-center overflow-hidden bg-[#050507] px-5 pb-20 pt-32 sm:px-8 lg:px-12"
+>
+  <!-- ================= BACKGROUND ================= -->
+
+  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+
+    <!-- Animated grid -->
+    <div class="hero-grid absolute inset-0"></div>
+
+    <!-- Main purple glow -->
+    <div
+      class="hero-glow absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-600/10 blur-[100px] sm:h-[550px] sm:w-[550px] sm:blur-[140px]"
+    ></div>
+
+    <!-- Blue glow -->
+    <div
+      class="hero-glow-blue absolute -right-40 top-20 h-[250px] w-[250px] rounded-full bg-blue-600/10 blur-[100px] sm:h-[400px] sm:w-[400px]"
+    ></div>
+
+    <!-- Purple glow -->
+    <div
+      class="hero-glow-purple absolute -left-40 bottom-0 h-[250px] w-[250px] rounded-full bg-purple-600/10 blur-[100px] sm:h-[400px] sm:w-[400px]"
+    ></div>
+
+    <!-- Floating particles -->
+    <span class="particle particle-1"></span>
+    <span class="particle particle-2"></span>
+    <span class="particle particle-3"></span>
+    <span class="particle particle-4"></span>
+    <span class="particle particle-5"></span>
+    <span class="particle particle-6"></span>
+    <span class="particle particle-7"></span>
+
+    <!-- Decorative circles -->
+    <div class="orbit orbit-1"></div>
+    <div class="orbit orbit-2"></div>
+
+  </div>
+
+
+  <!-- ================= CONTENT ================= -->
+
+  <div
+    class="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center text-center"
+  >
+
+    <!-- Availability -->
+    <div
+      class="hero-reveal hero-delay-1 mb-7 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-4 py-2 text-xs font-medium text-emerald-300 backdrop-blur-sm sm:text-sm"
+    >
+      <span class="relative flex h-2 w-2">
+        <span
+          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"
+        ></span>
+
+        <span
+          class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"
+        ></span>
+      </span>
+
+      Available for opportunities
+    </div>
+
+
+    <!-- Greeting -->
+    <p
+      class="hero-reveal hero-delay-2 text-sm font-medium uppercase tracking-[0.3em] text-white/40 sm:text-base"
+    >
+      Hello, I'm
+    </p>
+
+
+    <!-- Name -->
+    <h1
+      class="hero-reveal hero-delay-3 mt-4 max-w-5xl text-5xl font-bold leading-[0.95] tracking-[-0.06em] text-white sm:text-7xl md:text-8xl lg:text-9xl"
+    >
+      Joemics Kevin
+    </h1>
+
+
+    <!-- Role -->
+    <div
+      class="hero-reveal hero-delay-4 mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xl font-semibold tracking-tight sm:text-4xl md:text-5xl"
+    >
+      <span class="text-white/40">
+        Full Stack
+      </span>
+
+      <span
+        class="hero-gradient-text"
+      >
+        Developer
+      </span>
+    </div>
+
+
+    <!-- Description -->
+    <p
+      class="hero-reveal hero-delay-5 mt-7 max-w-2xl text-sm leading-7 text-white/50 sm:text-base sm:leading-8 md:text-lg"
+    >
+      I build modern, scalable and user-focused web applications,
+      combining elegant frontend experiences with robust backend systems
+      to turn ideas into reliable digital products.
+    </p>
+
+
+    <!-- CTA -->
+    <div
+      class="hero-reveal hero-delay-6 mt-9 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row"
+    >
+
+      <!-- Projects -->
+      <a
+        href="#projects"
+        class="group flex w-full items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:-translate-y-1 hover:bg-white/90 hover:shadow-[0_15px_50px_rgba(255,255,255,0.12)] sm:w-auto"
+      >
+        View Projects
+
+        <span
+          class="text-lg transition-transform duration-300 group-hover:translate-x-1"
+        >
+          →
+        </span>
+      </a>
+
+
+      <!-- Resume -->
+      <a
+        href="/resume/resume.pdf"
+        download
+        class="group flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-violet-400/40 hover:bg-violet-500/10 hover:shadow-[0_15px_50px_rgba(139,92,246,0.15)] sm:w-auto"
+      >
+        Download Resume
+
+        <span
+          class="transition-transform duration-300 group-hover:translate-y-1"
+        >
+          ↓
+        </span>
+      </a>
+
+    </div>
+
+
+    <!-- Social links -->
+    <div
+      class="hero-reveal hero-delay-7 mt-10 flex items-center gap-3"
+    >
+
+      <a
+        href="#"
+        aria-label="GitHub"
+        class="social-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="h-5 w-5"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1a4.7 4.7 0 0 1 1.2 3.2c0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3.1c0 .3.2.7.8.6A12 12 0 0 0 12 .3"
+          />
+        </svg>
+      </a>
+
+      <a
+        href="#"
+        aria-label="LinkedIn"
+        class="social-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="h-5 w-5"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9.3h3.8V21H3.3V9.3Zm6.2 0h3.6v1.6h.1c.5-.9 1.7-2 3.6-2 3.9 0 4.6 2.5 4.6 5.7V21h-3.8v-5.7c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9.5V9.3Z"
+          />
+        </svg>
+      </a>
+
+      <a
+        href="mailto:your@gmail.com"
+        aria-label="Gmail"
+        class="social-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="h-5 w-5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="#4285F4"
+            d="M21.35 12.27c0-.79-.07-1.55-.2-2.27H12v4.3h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.15c1.84-1.69 2.9-4.18 2.9-7.42Z"
+          />
+          <path
+            fill="#34A853"
+            d="M12 21.75c2.63 0 4.84-.87 6.45-2.36l-3.15-2.45c-.87.58-1.98.92-3.3.92-2.54 0-4.7-1.72-5.47-4.03H3.28v2.53A9.74 9.74 0 0 0 12 21.75Z"
+          />
+          <path
+            fill="#FBBC05"
+            d="M6.53 13.83A5.85 5.85 0 0 1 6.22 12c0-.64.11-1.26.31-1.83V7.64H3.28A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.06 1.03 4.36l3.25-2.53Z"
+          />
+          <path
+            fill="#EA4335"
+            d="M12 6.14c1.43 0 2.72.49 3.73 1.45l2.8-2.8C16.83 3.2 14.63 2.25 12 2.25a9.74 9.74 0 0 0-8.72 5.39l3.25 2.53C7.3 7.86 9.46 6.14 12 6.14Z"
+          />
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+
+    <!-- Bottom scroll indicator -->
+    <a
+      href="#about"
+      aria-label="Scroll to About section"
+      class="hero-scroll absolute bottom-0 hidden flex-col items-center gap-3 text-white/25 transition-colors duration-300 hover:text-white/60 sm:flex"
+    >
+
+      <span class="text-[10px] font-medium uppercase tracking-[0.35em]">
+        Scroll
+      </span>
+
+      <span
+        class="flex h-10 w-6 items-start justify-center rounded-full border border-white/10 p-1.5"
+      >
+        <span class="scroll-dot h-1.5 w-1.5 rounded-full bg-violet-400"></span>
+      </span>
+
+    </a>
+
+</section>

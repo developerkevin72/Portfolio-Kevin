@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+
+/* =================================
+   FOOTER LINKS
+================================= */
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 0.72rem;
+
+  text-decoration: none;
+
+  transition:
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.footer-link:hover {
+  color: rgba(255, 255, 255, 0.75);
+
+  transform: translateY(-1px);
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-link {
+    transition: none;
+  }
+}

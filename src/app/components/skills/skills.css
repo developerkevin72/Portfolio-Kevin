@@ -1,0 +1,272 @@
+:host {
+  display: block;
+}
+
+/* =================================
+   SKILL CARDS
+================================= */
+
+.skill-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 1rem;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  padding: 1.75rem;
+
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    background-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.skill-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(139, 92, 246, 0.08),
+      transparent 35%
+    );
+
+  opacity: 0;
+
+  transition: opacity 300ms ease;
+
+  pointer-events: none;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(139, 92, 246, 0.25);
+
+  background: rgba(139, 92, 246, 0.035);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25),
+    0 0 30px rgba(139, 92, 246, 0.04);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+/* =================================
+   ICONS
+================================= */
+
+.skill-icon {
+  display: flex;
+
+  width: 3rem;
+  height: 3rem;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0.8rem;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.frontend-icon {
+  border: 1px solid rgba(139, 92, 246, 0.2);
+
+  background: rgba(139, 92, 246, 0.08);
+
+  color: rgb(196, 181, 253);
+}
+
+.backend-icon {
+  border: 1px solid rgba(96, 165, 250, 0.2);
+
+  background: rgba(96, 165, 250, 0.08);
+
+  color: rgb(147, 197, 253);
+}
+
+.database-icon {
+  border: 1px solid rgba(167, 139, 250, 0.2);
+
+  background: rgba(167, 139, 250, 0.08);
+
+  color: rgb(196, 181, 253);
+}
+
+.tools-icon {
+  border: 1px solid rgba(96, 165, 250, 0.2);
+
+  background: rgba(96, 165, 250, 0.08);
+
+  color: rgb(147, 197, 253);
+
+  font-size: 1.1rem;
+}
+
+/* =================================
+   SKILL PILLS
+================================= */
+
+.skill-pill {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 0.5rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 0.65rem;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  padding: 0.6rem 0.75rem;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 0.78rem;
+  font-weight: 500;
+
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease,
+    transform 200ms ease;
+}
+
+.skill-pill:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(139, 92, 246, 0.25);
+
+  background: rgba(139, 92, 246, 0.06);
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.skill-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: rgba(139, 92, 246, 0.7);
+
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+}
+
+/* =================================
+   CONCEPTS
+================================= */
+
+.skill-concepts {
+  transition:
+    border-color 300ms ease,
+    background-color 300ms ease;
+}
+
+.skill-concepts:hover {
+  border-color: rgba(139, 92, 246, 0.2);
+
+  background: rgba(139, 92, 246, 0.025);
+}
+
+.concept-pill {
+  display: inline-flex;
+
+  align-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  padding: 0.55rem 0.8rem;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 0.72rem;
+  font-weight: 500;
+
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease;
+}
+
+.concept-pill:hover {
+  border-color: rgba(96, 165, 250, 0.25);
+
+  background: rgba(96, 165, 250, 0.05);
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 640px) {
+  .skill-card {
+    padding: 1.35rem;
+  }
+
+  .skills-reveal {
+    animation-duration: 0.6s;
+  }
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-reveal {
+    animation: none;
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+  .skill-card,
+  .skill-icon,
+  .skill-pill,
+  .concept-pill,
+  .skill-concepts {
+    transition: none;
+  }
+}
+/* Scroll reveal is handled by appScrollReveal */
+.skills-reveal {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.skills-delay-1,
+.skills-delay-2,
+.skills-delay-3,
+.skills-delay-4,
+.skills-delay-5,
+.skills-delay-6 {
+  animation: none;
+}

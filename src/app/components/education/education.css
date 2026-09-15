@@ -1,0 +1,243 @@
+:host {
+  display: block;
+}
+
+/* Scroll reveal is handled by appScrollReveal */
+.education-reveal {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.education-delay-1,
+.education-delay-2,
+.education-delay-3,
+.education-delay-4,
+.education-delay-5,
+.education-delay-6 {
+  animation: none;
+}
+
+/* =================================
+   EDUCATION CARD
+================================= */
+
+.education-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 1.25rem;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    background-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(139, 92, 246, 0.22);
+
+  background: rgba(139, 92, 246, 0.025);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.25),
+    0 0 35px rgba(139, 92, 246, 0.04);
+}
+
+/* =================================
+   TOP ACCENT
+================================= */
+
+.education-accent {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(139, 92, 246, 0.6),
+      transparent
+    );
+
+  opacity: 0.7;
+
+  transition: opacity 300ms ease;
+}
+
+.education-accent-blue {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(96, 165, 250, 0.6),
+      transparent
+    );
+}
+
+.education-card:hover .education-accent {
+  opacity: 1;
+}
+
+/* =================================
+   ICON
+================================= */
+
+.education-icon {
+  display: flex;
+
+  width: 3rem;
+  height: 3rem;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(139, 92, 246, 0.2);
+
+  border-radius: 0.8rem;
+
+  background: rgba(139, 92, 246, 0.08);
+
+  color: rgb(196, 181, 253);
+
+  font-size: 0.7rem;
+  font-weight: 600;
+
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.education-icon-blue {
+  border-color: rgba(96, 165, 250, 0.2);
+
+  background: rgba(96, 165, 250, 0.08);
+
+  color: rgb(147, 197, 253);
+}
+
+.education-card:hover .education-icon {
+  transform: scale(1.08) rotate(-3deg);
+
+  box-shadow:
+    0 0 25px rgba(139, 92, 246, 0.08);
+}
+
+/* =================================
+   HIGHLIGHT
+================================= */
+
+.education-highlight {
+  transition:
+    border-color 300ms ease,
+    background-color 300ms ease;
+}
+
+.education-highlight:hover {
+  border-color: rgba(139, 92, 246, 0.18);
+
+  background: rgba(139, 92, 246, 0.025);
+}
+
+/* =================================
+   ACADEMIC STATS
+================================= */
+
+.academic-stat {
+  display: flex;
+
+  min-width: 75px;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 0.8rem;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  padding: 0.75rem 1rem;
+
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease;
+}
+
+.academic-stat:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
+.academic-stat-value {
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 1.25rem;
+
+  font-weight: 600;
+}
+
+.academic-stat-label {
+  margin-top: 2px;
+
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 0.6rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 640px) {
+  .education-reveal {
+    animation-duration: 0.6s;
+  }
+
+  .academic-stat {
+    min-width: 65px;
+
+    padding: 0.65rem 0.8rem;
+  }
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .education-reveal {
+    animation: none;
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+  .education-card,
+  .education-icon,
+  .education-highlight,
+  .academic-stat {
+    transition: none;
+  }
+}

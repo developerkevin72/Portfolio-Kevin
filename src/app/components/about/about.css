@@ -1,0 +1,82 @@
+:host {
+  display: block;
+}
+
+/* ================================
+   TAGS
+================================ */
+
+.about-tag {
+  display: inline-flex;
+  align-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  padding: 0.5rem 0.8rem;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 0.72rem;
+  font-weight: 500;
+
+  transition:
+    color 250ms ease,
+    border-color 250ms ease,
+    background-color 250ms ease,
+    transform 250ms ease;
+}
+
+.about-tag:hover {
+  transform: translateY(-2px);
+
+  color: rgba(255, 255, 255, 0.8);
+
+  border-color: rgba(139, 92, 246, 0.3);
+
+  background: rgba(139, 92, 246, 0.06);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 640px) {
+  .about-reveal {
+    animation-duration: 0.6s;
+  }
+}
+
+/* ================================
+   REDUCED MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .about-tag {
+    transition: none;
+  }
+}
+
+/* Scroll reveal is now handled by appScrollReveal */
+.about-reveal {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.about-delay-1,
+.about-delay-2,
+.about-delay-3,
+.about-delay-4,
+.about-delay-5,
+.about-delay-6 {
+  animation: none;
+}
