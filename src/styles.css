@@ -36,28 +36,11 @@ body {
    SCROLL REVEAL
 ================================= */
 
+/* scroll reveal - disabled for smooth scrolling */
+
 [appScrollReveal] {
-  opacity: 0;
-  transform: translate3d(0, 14px, 0);
-  transition:
-    opacity 320ms ease,
-    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
-}
-
-[appScrollReveal].is-visible {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
-  will-change: auto;
-}
-
-@media (max-width: 640px) {
-  [appScrollReveal] {
-    transform: translate3d(0, 10px, 0);
-    transition:
-      opacity 260ms ease,
-      transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
-  }
+  transform: none;
 }
 
 
