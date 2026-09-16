@@ -202,27 +202,6 @@
   box-shadow: 0 10px 30px rgba(139, 92, 246, 0.18);
 }
 
-/* SCROLL */
-.hero-scroll {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.scroll-dot {
-  animation: scrollIndicator 1.8s ease-in-out infinite;
-}
-
-@keyframes scrollIndicator {
-  0%, 100% {
-    transform: translateY(0);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translateY(17px);
-    opacity: 1;
-  }
-}
-
 /* MOBILE */
 @media (max-width: 640px) {
   .hero-grid {
@@ -255,8 +234,7 @@
   .hero-reveal,
   .particle,
   .orbit,
-  .social-icon,
-  .scroll-dot {
+  .social-icon {
     animation: none !important;
     transition: none !important;
   }
