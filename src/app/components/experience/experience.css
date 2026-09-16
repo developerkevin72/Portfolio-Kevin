@@ -2,7 +2,7 @@
   display: block;
 }
 
-/* Scroll reveal is handled by appScrollReveal */
+/* Reveal */
 .experience-reveal {
   opacity: 1;
   transform: none;
@@ -11,22 +11,90 @@
 
 .experience-delay-1,
 .experience-delay-2,
-.experience-delay-3,
-.experience-delay-4,
-.experience-delay-5,
-.experience-delay-6 {
+.experience-delay-3 {
   animation: none;
 }
 
-/* =================================
-   EXPERIENCE CARD
-================================= */
+/* Timeline */
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(139, 92, 246, 0.5),
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+}
 
+.timeline-node {
+  position: absolute;
+  top: 0.25rem;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  border: 4px solid #050507;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.9);
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.25);
+}
+
+.timeline-node::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 50%;
+  animation: nodePulse 2.5s ease-in-out infinite;
+}
+
+.timeline-node-core {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(196, 181, 253, 0.9);
+}
+
+@keyframes nodePulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* Date */
+.timeline-date {
+  padding-top: 0.1rem;
+}
+
+.timeline-date-label {
+  display: inline-block;
+  color: rgba(196, 181, 253, 0.9);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Card */
 .experience-card {
   position: relative;
-
   overflow: hidden;
-
   transition:
     transform 300ms ease,
     border-color 300ms ease,
@@ -34,104 +102,69 @@
     box-shadow 300ms ease;
 }
 
-.experience-card::before {
-  content: "";
-
+.card-accent {
   position: absolute;
-
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at 0% 0%,
-      rgba(139, 92, 246, 0.08),
-      transparent 35%
-    );
-
-  opacity: 0;
-
-  pointer-events: none;
-
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(139, 92, 246, 0.7),
+    rgba(96, 165, 250, 0.1)
+  );
+  opacity: 0.5;
   transition: opacity 300ms ease;
 }
 
 .experience-card:hover {
   transform: translateY(-4px);
-
   border-color: rgba(139, 92, 246, 0.25);
-
   background: rgba(139, 92, 246, 0.035);
-
   box-shadow:
     0 25px 70px rgba(0, 0, 0, 0.25),
     0 0 35px rgba(139, 92, 246, 0.04);
 }
 
-.experience-card:hover::before {
+.experience-card:hover .card-accent {
   opacity: 1;
 }
 
-/* =================================
-   EXPERIENCE POINTS
-================================= */
-
+/* Points */
 .experience-point {
   display: flex;
-
   align-items: flex-start;
-
   gap: 0.75rem;
-
   color: rgba(255, 255, 255, 0.45);
-
   font-size: 0.875rem;
-
   line-height: 1.7;
 }
 
 .experience-point strong {
   color: rgba(255, 255, 255, 0.75);
-
   font-weight: 500;
 }
 
 .experience-bullet {
   flex-shrink: 0;
-
   width: 6px;
   height: 6px;
-
   margin-top: 0.55rem;
-
   border-radius: 50%;
-
   background: rgba(139, 92, 246, 0.8);
-
-  box-shadow:
-    0 0 8px rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
 }
 
-/* =================================
-   TECHNOLOGY TAGS
-================================= */
-
+/* Technology */
 .experience-tech {
   display: inline-flex;
-
   align-items: center;
-
   border: 1px solid rgba(255, 255, 255, 0.07);
-
   border-radius: 999px;
-
   background: rgba(255, 255, 255, 0.025);
-
   padding: 0.4rem 0.7rem;
-
   color: rgba(255, 255, 255, 0.45);
-
   font-size: 0.7rem;
-
   transition:
     color 200ms ease,
     border-color 200ms ease,
@@ -141,39 +174,37 @@
 
 .experience-tech:hover {
   transform: translateY(-2px);
-
   border-color: rgba(139, 92, 246, 0.25);
-
   background: rgba(139, 92, 246, 0.06);
-
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* =================================
-   MOBILE
-================================= */
-
+/* Mobile */
 @media (max-width: 639px) {
-  .experience-card {
-    padding: 1.35rem;
+  .timeline-line {
+    left: 7px;
   }
 
-  .experience-reveal {
-    animation-duration: 0.6s;
+  .timeline-node {
+    left: 7px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .timeline-date {
+    padding-left: 2rem;
+    text-align: left;
+  }
+
+  .experience-card {
+    margin-left: 2rem;
   }
 }
 
-/* =================================
-   REDUCED MOTION
-================================= */
-
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .experience-reveal {
+  .timeline-node::before {
     animation: none;
-
-    opacity: 1;
-
-    transform: none;
   }
 
   .experience-card,
