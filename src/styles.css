@@ -2,6 +2,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-restoration: manual;
 }
 
 body {
@@ -19,6 +20,10 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 * {
@@ -30,19 +35,15 @@ body {
   color: #ffffff;
 }
 
-
-
 /* =================================
    SCROLL REVEAL
 ================================= */
 
-/* scroll reveal - disabled for smooth scrolling */
-
 [appScrollReveal] {
   opacity: 1;
   transform: none;
+  visibility: visible;
 }
-
 
 /* =================================
    ACCESSIBILITY
@@ -70,16 +71,9 @@ select:focus-visible {
   outline-offset: 4px;
 }
 
-
 /* =================================
-   TYPOGRAPHY POLISH
+   TYPOGRAPHY
 ================================= */
-
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
 
 h1,
 h2,
@@ -94,7 +88,29 @@ p {
   text-wrap: pretty;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-restoration: manual;
+/* =================================
+   MOBILE PERFORMANCE
+   iOS / WebKit optimization
+================================= */
+
+@media (max-width: 768px) {
+  /* Reduce expensive blur rendering */
+  .blur-\[130px\],
+  .blur-\[120px\],
+  .blur-\[100px\],
+  .blur-\[80px\],
+  .blur-\[70px\],
+  .blur-\[60px\] {
+    filter: none !important;
+  }
+
+  /* Disable backdrop blur on mobile */
+  .backdrop-blur,
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
 }
